@@ -7,13 +7,14 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "turbo run postinstall",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-custom": "*",
     "prettier": "latest",
     "turbo": "latest"
   },
