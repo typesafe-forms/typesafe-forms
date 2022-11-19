@@ -1,8 +1,9 @@
 import { createConfig } from "@typesafe-forms/core";
+import useForm from "@typesafe-forms/core/lib/useForm";
 
 const config = createConfig();
 
-config
+const loginForm = config
 	.createForm()
 	.addInput({
 		name: "email",
@@ -10,14 +11,16 @@ config
 	})
 	.addInput({
 		name: "password",
-		type: "password",
+		type: "text",
 	})
 	.addInput({
-		name: "remember",
-		type: "checkbox",
+		name: "login",
+		type: "button",
 	});
 
 export default function Web() {
+	const LoginForm = useForm(loginForm);
+
 	return (
 		<div>
 			<h1>Web</h1>

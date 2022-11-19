@@ -18,11 +18,11 @@ export class Config {
 }
 
 const baseConfig: InputConfig = {
-	button: (props) => <Button />,
-	text: (props) => <TextInput />,
+	button: (props) => <Button {...props} />,
+	text: (props) => <TextInput {...props} />,
 };
 
-export const createConfig = (propsConfig: InputConfig): Config => {
+export const createConfig = (propsConfig?: InputConfig): Config => {
 	const inputConfig: InputConfig = { ...baseConfig, ...propsConfig };
 
 	const config: Config = new Config(inputConfig);
